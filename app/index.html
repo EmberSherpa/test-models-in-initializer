@@ -17,6 +17,16 @@
   <body>
     {{content-for 'body'}}
 
+    <script>
+      var BOOTSTRAP_DATA = {
+        'channel': {
+          'id': 0,
+          'name': 'Test Channel',
+          'internalName': 'test-channel',
+          'logoUrl': '//somecdn.net/test-channel/logo.png'
+        }
+      }
+    </script>
     <script src="assets/vendor.js"></script>
     <script src="assets/test-models-in-initializer.js"></script>
 

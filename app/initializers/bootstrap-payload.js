@@ -1,3 +1,5 @@
+/*global BOOTSTRAP_DATA*/
+
 export function initialize(container, application) {
   var store = container.lookup('service:store'),
     payloadKeys = Object.keys(BOOTSTRAP_DATA);
