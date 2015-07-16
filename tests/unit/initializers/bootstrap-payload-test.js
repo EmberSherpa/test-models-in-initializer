@@ -1,16 +1,24 @@
 import Ember from 'ember';
 import { initialize } from '../../../initializers/bootstrap-payload';
 import { module, test } from 'qunit';
+import Channel from 'test-models-in-initializer/models/channel';
 
 var registry, application;
 
 module('Unit | Initializer | bootstrap payload', {
-  needs: ['model:channel'],
-
   beforeEach: function() {
+    window.BOOTSTRAP_DATA = {
+      'channel': {
+        'id': 0,
+        'name': 'Test Channel',
+        'internalName': 'test-channel',
+        'logoUrl': '//somecdn.net/test-channel/logo.png'
+      }
+    };
     Ember.run(function() {
       application = Ember.Application.create();
       registry = application.registry;
+      registry.register('model:channel', Channel);
       application.deferReadiness();
     });
   }

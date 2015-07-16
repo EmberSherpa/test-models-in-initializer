@@ -8,8 +8,10 @@ export function initialize(container, application) {
     var registryKey = `bootstrap-payload:${key}`,
         model;
 
-    model = store.createRecord(key, BOOTSTRAP_DATA[key]);
-    application.register(registryKey, model, {instantiate:false});
+    Ember.run(function(){
+      model = store.createRecord(key, BOOTSTRAP_DATA[key]);
+      application.register(registryKey, model, {instantiate:false});
+    });
   });
 }
 
