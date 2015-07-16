@@ -1,3 +1,4 @@
+import Ember from 'ember';
 /*global BOOTSTRAP_DATA*/
 
 export function initialize(container, application) {
